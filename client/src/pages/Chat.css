@@ -1,0 +1,356 @@
+/* my styles  */
+:root {
+    --chat-primary-bg: #044054ae;
+    --chat-primary-color: #fff;
+    --chat-bubble-bg: #fff;
+    --chat-bubble-color: rgba(0, 0, 0, .8);
+    --chat-scroll-track-color: #f1f1f1;
+    --chat-scroll-color: #7a7676;
+}
+
+
+.bubble-container {
+    width: 100%;
+    position: static;
+    margin: 20px auto;
+    clear: both;
+}
+
+
+
+.chat-bubble {
+    position: relative;
+    width: 600px;
+    max-width: 80%;
+    border-radius: 10px;
+    background-color: var(--chat-bubble-bg);
+    color: var(--chat-bubble-color);
+    padding: 15px;
+    line-height: 2;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    font-weight: 400;
+
+}
+
+.text_message {
+    white-space: pre-wrap;
+}
+
+
+.bubble-container .left_bubble {
+    float: left;
+    margin-left: 3px;
+}
+
+.bubble-container .right_bubble {
+    float: right;
+    margin-right: 3px !important;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.chat-bubble.right_bubble::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 20px 0;
+    border-color: var(--chat-bubble-bg) transparent transparent;
+    bottom: 35%;
+    right: -25px;
+    transform: rotate(-90deg);
+}
+
+.chat-bubble.left_bubble::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 20px 0;
+    border-color: var(--chat-bubble-bg) transparent transparent;
+    top: 35%;
+    left: -25px;
+    transform: rotate(90deg);
+}
+
+.bub_title {
+    font-weight: bold;
+}
+
+.start-chat {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.start-chat::-webkit-scrollbar {
+    width: 5px;
+    /* Adjust scrollbar width */
+}
+
+.start-chat::-webkit-scrollbar-thumb {
+    background-color: var(--chat-scroll-color);
+    /* Adjust thumb color */
+    border-radius: 5px;
+    /* Adjust thumb border radius */
+}
+
+.start-chat::-webkit-scrollbar-track {
+    background-color: var(--chat-scroll-track-color);
+    /* Adjust track color */
+}
+
+.assistant-name {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 0.5;
+}
+
+#assistant-chat {
+    box-sizing: border-box !important;
+    outline: none !important;
+    position: fixed;
+    width: 600px;
+    max-width: 100% !important;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px var(--chat-primary-bg);
+    bottom: 90px;
+    right: 30px;
+    overflow: hidden;
+    z-index: 10000000 !important;
+    animation-name: showchat;
+    animation-duration: 1s;
+    transform: scale(1);
+    background-color: #fff;
+}
+
+a.blantershow-chat {
+    background: #fff;
+    color: #404040;
+    position: fixed;
+    display: flex;
+    font-weight: 400;
+    justify-content: space-between;
+    z-index: 100000000;
+    bottom: 25px;
+    right: 30px;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
+    text-decoration: none;
+    padding-top: 20px;
+}
+
+a.blantershow-chat svg {
+    width: 25px;
+    height: 25px;
+    transform: scale(1.2);
+    margin: 0 10px 0 0;
+    object-fit: contain;
+}
+
+a.blantershow-chat svg path,
+.info-avatar svg path {
+    fill: var(--chat-primary-bg) !important;
+}
+
+.header-chat {
+    background: var(--chat-primary-bg);
+    color: var(--chat-primary-color);
+    padding: 20px;
+}
+
+.header-chat p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.info-avatar {
+    position: relative;
+}
+
+.info-avatar svg {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    float: left;
+    margin: 0 10px 0 0;
+    background-color: #fff;
+
+}
+
+input#chat-input {
+    border: none;
+    font-family: inherit;
+    width: 100%;
+    height: 20px;
+    outline: none;
+    resize: none;
+    padding: 20px;
+    font-size: 14px;
+}
+
+a#send-it {
+    width: 30px;
+    font-weight: 700;
+    padding: 10px 10px 0;
+    background: var(--chat-bubble-bg);
+    border-radius: 0px;
+
+
+}
+
+a#send-it svg {
+    fill: var(--chat-primary-bg);
+    height: 24px;
+    width: 24px;
+}
+
+.start-chat .blanter-msg {
+    display: flex;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    border-top: solid 1px var(--primary-bg);
+}
+
+a.close-chat {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: var(--chat-primary-color);
+    font-size: 30px;
+    text-decoration: none;
+}
+
+/* CSS Multiple assistant Chat */
+
+
+
+
+@keyframes ZpjSY {
+    0% {
+        background-color: rgb(182, 181, 186);
+    }
+
+    15% {
+        background-color: rgb(17, 17, 17);
+    }
+
+    25% {
+        background-color: rgb(182, 181, 186);
+    }
+}
+
+@keyframes hPhMsj {
+    15% {
+        background-color: rgb(182, 181, 186);
+    }
+
+    25% {
+        background-color: rgb(17, 17, 17);
+    }
+
+    35% {
+        background-color: rgb(182, 181, 186);
+    }
+}
+
+@keyframes showhide {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes showchat {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    #assistant-chat {
+        width: auto;
+        left: 5%;
+        right: 5%;
+        font-size: 80%;
+    }
+}
+
+.hide {
+    display: none;
+    animation-name: showhide;
+    animation-duration: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.show {
+    display: block;
+    animation-name: showhide;
+    animation-duration: 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.hFENyl {
+    position: relative;
+    display: flex;
+}
+
+.ixsrax {
+    height: 5px;
+    width: 5px;
+    margin: 0px 2px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 0px;
+    background-color: rgb(158, 157, 162);
+    animation-name: ZpjSY;
+}
+
+.dRvxoz {
+    height: 5px;
+    width: 5px;
+    margin: 0px 2px;
+    background-color: rgb(182, 181, 186);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 0px;
+    animation-name: hPhMsj;
+}
+
+.start-chat {
+    background-color: rgba(155, 155, 155, .5);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.assistant-chat-body {
+    padding: 20px;
+}
+
+.eJJEeC {
+    min-height: 40px;
+    text-align: center;
+    margin: 10px auto;
+}
